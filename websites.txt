@@ -1,0 +1,15 @@
+Libro principale:
+http://neuralnetworksanddeeplearning.com/chap1.html
+
+---
+
+Articolo su regression (relationship between any two things)
+https://towardsdatascience.com/regression-explained-in-simple-terms-dccbcad96f61
+
+Articolo su stochastic (random) gradient descent
+https://towardsdatascience.com/stochastic-gradient-descent-clearly-explained-53d239905d31
+
+---
+
+Sito da cui mi sono ispirato
+https://maneprajakta.github.io/Digit_Recognition_Web_App/
