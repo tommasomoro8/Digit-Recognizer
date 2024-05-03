@@ -1,0 +1,216 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.center {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+#title {
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#canvas-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+#bg-filler {
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+
+    position: absolute;
+    top: calc(50% - 224px);
+    left: calc(50% - 200px);
+
+    opacity: 0;
+
+    /* z-index: 10; */
+
+    transition: top 1s cubic-bezier(1, 0.04, 0.56, 0.92),
+                left 1s cubic-bezier(1, 0.04, 0.56, 0.92),
+                width 1s cubic-bezier(1, 0.04, 0.56, 0.92),
+                height 1s cubic-bezier(1, 0.04, 0.56, 0.92),
+                border-radius 1s cubic-bezier(1, 0.04, 0.56, 0.92);
+}
+
+#bg-filler.fill {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    opacity: 100%;
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+canvas {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    border-radius: 8px;
+    /* box-shadow: 0 6px 5px #dedede; */
+
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+
+#canvas-buttons {
+    width: 400px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.canvas-button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    border-bottom: 5px solid;
+    margin: 0 10px;
+}
+
+#clear {
+    border-bottom-color: #b4093c98;
+    background-color: #FFE7F1;
+    color: #B4093B;
+}
+
+#recognizer {
+    border-bottom-color: #12573f86;
+    background-color: #D3F2CF;
+    color: #12573F;
+}
+
+.canvas-button:hover {
+    border-bottom-width: 0;
+    transform: translateY(5px);
+}
+
+#canvas-low-density {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 8px;
+    box-shadow: 0 6px 5px #dedede;
+
+    background-color: black;
+
+    position: absolute;
+    top: 0;
+    transition: opacity 1s cubic-bezier(1, 0.03, 0.78, 0.75),
+                transform 0.5s cubic-bezier(0.67, 0.4, 0.38, 0.64),
+                width 0.5s cubic-bezier(0.67, 0.4, 0.38, 0.64),
+                height 0.5s cubic-bezier(0.67, 0.4, 0.38, 0.64);
+    opacity: 0;
+
+    z-index: 1;
+}
+
+#canvas-low-density.pulse {
+    transform: translate(-5px, -5px);
+    width: 410px;
+    height: 410px;
+}
+
+#canvas-low-density.show {
+    z-index: 4;
+    opacity: 100%;
+    box-shadow: none;
+}
+
+.canvas-low-density-row {
+    width: inherit;
+    height: calc(400px / 28);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.canvas-low-density-cell {
+    width: calc(400px / 28);
+    height: calc(400px / 28);
+
+    border-style: none;
+    border-radius: 0;
+    transition: all 1s linear,
+                border 1s ease-in;
+}
+
+.canvas-low-density-cell.round {
+    width: calc(400px / 28);
+    height: calc(400px / 28);
+
+    border-radius: 100vw;
+    border: 1px solid rgb(99, 99, 99);
+}
