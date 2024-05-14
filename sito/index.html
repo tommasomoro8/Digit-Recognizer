@@ -14,13 +14,44 @@
         <div id="title">Riconoscitore di cifre</div>
         <span id="canvas-container">
             <canvas width="400" height="400"></canvas>
-            <div id="canvas-low-density"><!--filled by js--></div>
+            <div id="canvas-low-density">
+                <!--filled by js-->
+            </div>
         </span>
         <div id="canvas-buttons">
             <button class="canvas-button" id="clear">Indietro</button>
             <button class="canvas-button" id="recognizer">Riconosci</button>
         </div>
     </div>
+
+    <div class="hidden-layers">
+        <div id="middle-layers">
+            <!--filled by js-->
+        </div>
+    </div>
+
+
+    <div class="hidden-layers">
+        <div id="output-layers">
+            <!--filled by js-->
+        </div>
+    </div>
+
+    <span class="center row">
+        <div class="hidden-lines" id="hidden-lines-sx">
+            <span id="hidden-lines-insert-sx" style="position: relative;">
+                <!--filled by js-->
+            </span>
+        </div>
+
+        <div class="hidden-lines" id="hidden-lines-dx">
+            <span id="hidden-lines-insert-dx" style="position: relative;">
+                <!--filled by js-->
+            </span>
+        </div>
+    </span>
+
+    <div id="disclaimer"></div>
     
     <div id="bg-filler"></div>
 
